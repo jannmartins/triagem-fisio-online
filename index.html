@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fisio online é pra você? | Dra. Janaina Martins</title>
+    
+    <meta name="description" content="Descubra em 2 minutos se a Fisioterapia Online é indicada para o seu caso. Avaliação rápida com a Dra. Janaina Martins.">
+    <meta property="og:title" content="Triagem: Fisio Online é para você?">
+    <meta property="og:description" content="Faça a triagem rápida e descubra se o tratamento à distância é seguro e indicado para a sua dor atual.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="COLE_AQUI_O_LINK_DA_IMAGEM_DE_CAPA.jpg">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-534659772"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-534659772');
+    </script>
+    
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '851854723867896');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=851854723867896&ev=PageView&noscript=1"
+    /></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Paleta Premium Refinada */
+            --terracotta: #a85939; 
+            --terracotta-light: #c97a52;
+            --terracotta-dark: #6d3a1f;
+            --cream-bg: #fffaf5; 
+            --cream-light: #fffcf8;
+            --paper-border: #ebdcd0;
+            --paper-border-light: #f5ede5;
+            
+            --black-text: #2d2623;
+            --text-gray: #5c524d;
+            --text-light: #8b7d78;
+            --white: #ffffff;
+            
+            --green: #10b981;
+            --yellow: #eab308;
+            --red: #ef4444;
+            --blue-globe: #3b82f6;
+            
+            --glass-bg: rgba(255, 250, 245, 0.98);
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: linear-gradient(135deg, var(--terracotta) 0%, #8c472c 100%);
+            background-attachment: fixed;
+            background-image: 
+                linear-gradient(135deg, var(--terracotta) 0%, #8c472c 100%),
+                radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+            background-size: 100% 100%, 24px 24px;
+            color: var(--black-text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 40px 24px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- LOGO TIPOGRÁFICO "Minha Fisio Online" --- */
+        .brand-logo {
+            text-align: center;
+            margin-bottom: 32px;
+            color: var(--cream-bg);
+            animation: slideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .brand-logo .brand-text {
+            font-family: 'Crimson Pro', serif;
+            font-style: italic;
+            font-size: 36px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+            letter-spacing: -0.5px;
+        }
+
+        .brand-logo .brand-subtitle {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.9;
+            margin-top: 4px;
+        }
+
+        .quiz-card {
+            background: linear-gradient(135deg, var(--glass-bg), rgba(255, 252, 248, 0.95));
+            border-radius: 28px;
+            padding: 56px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            flex-grow: 1;
+            animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            border: 1px solid rgba(168, 89, 57, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.15); }
+        }
+        
+        .header { text-align: center; margin-bottom: 40px; }
+        
+        /* --- HERO ILLUSTRATION: Pessoa em Movimento --- */
+        .hero-illustration {
+            position: relative;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            perspective: 1000px;
+        }
+
+        /* Corpo simplificado em silhueta */
+        .body-figure {
+            position: relative;
+            width: 100px;
+            height: 160px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        /* Cabeça */
+        .head {
+            width: 32px;
+            height: 32px;
+            background: var(--terracotta);
+            border-radius: 50%;
+            margin-bottom: 8px;
+            box-shadow: 0 4px 12px rgba(168, 89, 57, 0.2);
+            animation: headBob 2s ease-in-out infinite;
+        }
+
+        @keyframes headBob {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        /* Torso */
+        .torso {
+            width: 28px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--terracotta-light), var(--terracotta));
+            border-radius: 8px;
+            margin-bottom: 4px;
+            box-shadow: 0 4px 16px rgba(168, 89, 57, 0.15);
+        }
+
+        /* Braços */
+        .arms {
+            position: absolute;
+            top: 50px;
+            width: 80px;
+            height: 20px;
+            display: flex;
+            justify-content: space-between;
+            z-index: 2;
+        }
+
+        .arm {
+            width: 18px;
+            height: 18px;
+            background: linear-gradient(135deg, #c97a52, var(--terracotta));
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(168, 89, 57, 0.15);
+        }
+
+        .arm-left {
+            animation: armSwing 1.5s ease-in-out infinite;
+        }
+
+        .arm-right {
+            animation: armSwing 1.5s ease-in-out infinite reverse;
+        }
+
+        @keyframes armSwing {
+            0%, 100% { transform: translateY(0) rotateZ(-15deg); }
+            50% { transform: translateY(-20px) rotateZ(25deg); }
+        }
+
+        /* Pernas */
+        .legs {
+            position: absolute;
+            top: 100px;
+            width: 40px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .leg {
+            width: 12px;
+            height: 50px;
+            background: linear-gradient(180deg, var(--terracotta-dark), #6d3a1f);
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .leg-left {
+            animation: legStep 1.5s ease-in-out infinite;
+        }
+
+        .leg-right {
+            animation: legStep 1.5s ease-in-out infinite reverse;
+        }
+
+        @keyframes legStep {
+            0%, 100% { transform: rotateZ(-8deg) translateY(0); }
+            50% { transform: rotateZ(15deg) translateY(4px); }
+        }
+
+        /* Sparkles ao redor */
+        .sparkle {
+            position: absolute;
+            color: var(--yellow);
+            filter: drop-shadow(0 2px 4px rgba(234, 179, 8, 0.3));
+            animation: twinkle 2s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .sparkle-1 { top: 10px; left: 30px; width: 20px; height: 20px; animation-delay: 0s; }
+        .sparkle-2 { top: 20px; right: 40px; width: 24px; height: 24px; animation-delay: 0.5s; }
+        .sparkle-3 { bottom: 30px; left: 20px; width: 18px; height: 18px; animation-delay: 1s; }
+
+        h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--black-text);
+            margin-bottom: 16px;
+            line-height: 1.15;
+            letter-spacing: -0.8px;
+        }
+        
+        .storytelling {
+            text-align: left;
+            margin-bottom: 40px;
+            color: var(--text-gray);
+        }
+        
+        .storytelling p {
+            margin-bottom: 16px;
+            font-size: 17px;
+            line-height: 1.65;
+            font-weight: 500;
+        }
+
+        .storytelling strong {
+            color: var(--black-text);
+            font-weight: 700;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--cream-light), var(--white));
+            border: 1px solid var(--paper-border);
+            border-left: 6px solid var(--terracotta);
+            padding: 28px;
+            border-radius: 12px;
+            margin-top: 28px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(168, 89, 57, 0.1), transparent);
+        }
+        
+        .highlight-box p {
+            color: var(--black-text);
+            margin: 0;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        
+        .progress-container {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .progress-bar {
+            flex-grow: 1;
+            height: 8px;
+            background: linear-gradient(90deg, var(--paper-border), var(--paper-border-light));
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--terracotta), var(--terracotta-light));
+            border-radius: 12px;
+            transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 0 12px rgba(168, 89, 57, 0.4);
+        }
+        
+        .question-number {
+            font-size: 13px;
+            color: var(--text-gray);
+            font-weight: 700;
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+        }
+        
+        .question-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--black-text);
+            margin-bottom: 12px;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+        
+        .question-subtitle {
+            font-size: 15px;
+            color: var(--text-gray);
+            margin-bottom: 32px;
+            font-weight: 500;
+        }
+        
+        .options-group { margin-bottom: 32px; }
+        
+        .options-group-title {
+            font-weight: 700;
+            font-size: 12px;
+            color: var(--terracotta); 
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        
+        .option {
+            background: linear-gradient(135deg, var(--white), var(--cream-light));
+            border: 2px solid var(--paper-border);
+            border-radius: 20px;
+            padding: 22px 28px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+        
+        .option:hover {
+            transform: translateY(-6px) scale(1.02);
+            border-color: var(--terracotta);
+            background: linear-gradient(135deg, var(--cream-light), var(--white));
+            box-shadow: 
+                0 12px 28px rgba(168, 89, 57, 0.18),
+                0 0 0 1px rgba(168, 89, 57, 0.1) inset;
+        }
+        
+        .option.selected {
+            border-color: var(--terracotta);
+            background: linear-gradient(135deg, rgba(168, 89, 57, 0.05), var(--cream-light));
+            box-shadow: 
+                0 8px 24px rgba(168, 89, 57, 0.22),
+                inset 0 0 0 2px var(--terracotta);
+        }
+        
+        .option-checkbox {
+            width: 24px;
+            height: 24px;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            flex-shrink: 0;
+            position: relative;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+        
+        .option.selected .option-checkbox {
+            background: var(--terracotta);
+            border-color: var(--terracotta);
+            box-shadow: 0 2px 8px rgba(168, 89, 57, 0.3);
+        }
+        
+        .option.selected .option-checkbox::after {
+            content: '';
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            width: 6px;
+            height: 10px;
+            border-right: 2px solid white;
+            border-bottom: 2px solid white;
+        }
+        
+        .option-text {
+            flex: 1;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--black-text);
+        }
+        
+        .text-input {
+            width: 100%;
+            padding: 22px 28px;
+            border: 2px solid var(--paper-border);
+            border-radius: 18px;
+            font-family: inherit;
+            font-size: 16px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+            resize: vertical;
+            min-height: 100px;
+            background: linear-gradient(135deg, var(--white), var(--cream-light));
+            color: var(--black-text);
+        }
+
+        .text-input::placeholder {
+            color: var(--text-light);
+        }
+        
+        .text-input:focus {
+            outline: none;
+            border-color: var(--terracotta);
+            box-shadow: 0 0 0 4px rgba(168, 89, 57, 0.12);
+            background: var(--white);
+        }
+        
+        .button {
+            background: linear-gradient(135deg, var(--black-text), #1a1614);
+            color: var(--cream-bg);
+            border: none;
+            border-radius: 100px;
+            padding: 24px 40px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.3px;
+        }
+        
+        .button:hover:not(:disabled) {
+            background: linear-gradient(135deg, #1a1614, #0a0805);
+            transform: translateY(-4px);
+            box-shadow: 0 14px 36px rgba(0, 0, 0, 0.25);
+        }
+        
+        .button:active:not(:disabled) {
+            transform: translateY(-2px);
+        }
+        
+        .button:disabled {
+            background: var(--paper-border);
+            cursor: not-allowed;
+            box-shadow: none;
+            color: #94a3b8;
+        }
+
+        .button-secondary {
+            background: transparent;
+            color: var(--terracotta);
+            border: 2px solid var(--terracotta);
+            box-shadow: none;
+            font-weight: 700;
+        }
+
+        .button-secondary:hover {
+            background: linear-gradient(135deg, rgba(168, 89, 57, 0.08), rgba(168, 89, 57, 0.04));
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(168, 89, 57, 0.15);
+        }
+        
+        /* Loading Screen */
+        .loading-container {
+            text-align: center;
+            padding: 40px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid var(--paper-border);
+            border-top: 4px solid var(--terracotta);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 32px;
+            box-shadow: 0 0 12px rgba(168, 89, 57, 0.2);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 34px;
+            font-weight: 700;
+            color: var(--black-text);
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .loading-subtitle {
+            font-size: 16px;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .did-you-know {
+            background: linear-gradient(135deg, var(--white), var(--cream-light));
+            padding: 28px;
+            border-radius: 18px;
+            border: 1px solid var(--paper-border);
+            border-left: 4px solid var(--yellow); 
+            text-align: left;
+            max-width: 90%;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+            animation: fadeIn 0.8s ease;
+        }
+
+        .did-you-know span {
+            font-weight: 800;
+            color: var(--yellow);
+            display: block;
+            margin-bottom: 8px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .did-you-know p {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* Result Area */
+        .result-card { text-align: left; }
+        
+        .result-header {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            margin-bottom: 36px;
+            padding: 36px;
+            background: linear-gradient(135deg, rgba(255, 250, 245, 0.6), rgba(255, 255, 255, 0.4));
+            border-radius: 20px;
+            border: 1px solid rgba(168, 89, 57, 0.1);
+        }
+        
+        .result-icon-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 4px solid var(--white);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .result-icon-box i { width: 40px; height: 40px; color: white; }
+
+        @keyframes popIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .result-title {
+            font-family: 'Crimson Pro', serif;
+            font-size: 38px;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+        }
+        
+        /* Cores Específicas dos Resultados */
+        .theme-green .result-icon-box { background: var(--green); }
+        .theme-green .result-title { color: var(--green); }
+        
+        .theme-yellow .result-icon-box { background: var(--yellow); }
+        .theme-yellow .result-title { color: var(--yellow); }
+        
+        .theme-red .result-icon-box { background: var(--red); }
+        .theme-red .result-title { color: var(--red); }
+        
+        .result-body {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, var(--white), var(--cream-light));
+            padding: 36px;
+            border-radius: 18px;
+            border: 1px solid var(--paper-border);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+        
+        .result-body p { 
+            margin-bottom: 18px;
+            font-weight: 500;
+        }
+        .result-body p:last-child { margin-bottom: 0; }
+
+        .result-body strong {
+            color: var(--black-text);
+            font-weight: 700;
+        }
+        
+        .whatsapp-button {
+            background: linear-gradient(135deg, #25D366, #1fb855);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 24px 40px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 17px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 28px rgba(37, 211, 102, 0.3);
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.3px;
+        }
+        
+        .whatsapp-button:hover {
+            background: linear-gradient(135deg, #1fb855, #17a247);
+            transform: translateY(-4px);
+            box-shadow: 0 14px 36px rgba(37, 211, 102, 0.4);
+        }
+
+        .buttons-grid {
+            display: grid;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--cream-bg);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            opacity: 0.9;
+        }
+
+        .footer-brand {
+            font-family: 'Crimson Pro', serif;
+            font-size: 22px;
+            font-weight: 700;
+            font-style: italic;
+            letter-spacing: -0.3px;
+        }
+
+        .footer-tagline {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            opacity: 0.85;
+        }
+
+        .footer-crefito {
+            font-size: 12px;
+            font-weight: 600;
+            opacity: 0.8;
+        }
+        
+        .hidden { display: none; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        #confetti-container {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            border-radius: 28px;
+            z-index: 10;
+        }
+        
+        @media (max-width: 640px) {
+            .container { padding: 20px; }
+            .brand-logo .brand-text { font-size: 32px; }
+            .brand-logo .brand-subtitle { font-size: 11px; }
+            .quiz-card { padding: 36px 24px; border-radius: 24px; }
+            
+            h1 { font-size: 36px; }
+            .question-title { font-size: 30px; }
+            .result-header { 
+                flex-direction: column; 
+                align-items: flex-start; 
+                gap: 20px;
+                padding: 28px;
+            }
+            .result-title { font-size: 32px; }
+            .button, .whatsapp-button { 
+                padding: 20px 24px; 
+                font-size: 16px; 
+            }
+            .hero-illustration {
+                height: 150px;
+                margin-bottom: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="brand-logo">
+            <span class="brand-text">Minha Fisio Online</span>
+            <span class="brand-subtitle">Conforto de se mover bem, de onde você estiver</span>
+        </div>
+
+        <div id="screen-intro" class="quiz-card">
+            <div class="header">
+                
+                <!-- NOVA HERO ILLUSTRATION: Pessoa em Movimento -->
+                <div class="hero-illustration">
+                    <i data-lucide="sparkles" class="sparkle sparkle-1"></i>
+                    <i data-lucide="sparkles" class="sparkle sparkle-2"></i>
+                    <i data-lucide="sparkles" class="sparkle sparkle-3"></i>
+
+                    <div class="body-figure">
+                        <div class="head"></div>
+                        <div class="torso"></div>
+                        <div class="arms">
+                            <div class="arm arm-left"></div>
+                            <div class="arm arm-right"></div>
+                        </div>
+                        <div class="legs">
+                            <div class="leg leg-left"></div>
+                            <div class="leg leg-right"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <h1>Fisioterapia online funciona para mim?</h1>
+            </div>
+            
+            <div class="storytelling">
+                <p>Essa é a pergunta que quase todo mundo faz. E a resposta é: <strong>depende.</strong></p>
+                <p>A maioria das pessoas não sabe, mas a fisioterapia online funciona para MUITO mais situações do que parece. E você não precisa ficar na dúvida.</p>
+                <p>Criei esta <strong>triagem rápida de 2 minutos</strong> para analisar o SEU caso específico e descobrir se o que você sente pode ser tratado à distância de forma segura e eficaz.</p>
+                
+                <div class="highlight-box">
+                    <p>💡 Atenção: tratamento online não é "vídeo de exercício". É consulta ao vivo, investigação clínica profunda e acompanhamento individualizado para tratar a raiz do seu problema.</p>
+                </div>
+            </div>
+            
+            <button class="button" onclick="startQuiz()">
+                Descobrir se funciona para mim <i data-lucide="arrow-right"></i>
+            </button>
+
+            <div style="text-align: center; margin-top: 20px; font-size: 15px; font-style: italic; color: var(--text-gray); font-weight: 500;">
+                Você pode se surpreender com o que é possível tratar sem sair de casa.
+            </div>
+            
+            <div style="text-align: center; margin-top: 14px; font-size: 13px; color: rgba(255, 250, 245, 0.95); display: flex; align-items: center; justify-content: center; gap: 8px; font-weight: 600; background: rgba(0, 0, 0, 0.15); padding: 12px 16px; border-radius: 100px; width: fit-content; margin-left: auto; margin-right: auto;">
+                <i data-lucide="lock" style="width: 14px; height: 14px;"></i> 100% gratuita e confidencial
+            </div>
+        </div>
+
+        <div id="screen-questions" class="quiz-card hidden">
+            <div class="progress-container">
+                <div id="question-number" class="question-number">1 / 6</div>
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill" style="width: 16.6%"></div>
+                </div>
+            </div>
+            
+            <h2 id="question-title" class="question-title"></h2>
+            <div id="question-subtitle" class="question-subtitle"></div>
+            
+            <div id="question-content"></div>
+            
+            <button id="next-btn" class="button" onclick="nextQuestion()" disabled>
+                Próxima <i data-lucide="chevron-right"></i>
+            </button>
+        </div>
+
+        <div id="screen-loading" class="quiz-card hidden">
+            <div class="loading-container">
+                <div class="spinner"></div>
+                <h2 class="loading-title">Analisando seu perfil...</h2>
+                <div class="loading-subtitle">Cruzando suas respostas com meus critérios clínicos de segurança.</div>
+                
+                <div class="did-you-know" style="margin-top: 32px;">
+                    <span>💡 Você sabia?</span>
+                    <p>Estudos comprovam que a Fisioterapia Online reduz dores de forma tão eficaz quanto o tratamento presencial, ajudando você a ganhar tempo e qualidade de vida.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="screen-result" class="quiz-card hidden">
+            <div id="confetti-container"></div>
+            
+            <div class="result-card">
+                <div class="result-header">
+                    <div id="result-icon-box" class="result-icon-box">
+                        <i id="result-icon" data-lucide="target"></i>
+                    </div>
+                    <h2 id="result-title" class="result-title"></h2>
+                </div>
+                
+                <div id="result-body" class="result-body"></div>
+                
+                <div class="buttons-grid">
+                    <a id="whatsapp-link" href="#" class="whatsapp-button" target="_blank" rel="noopener noreferrer" onclick="trackQuizEvent('WhatsAppConversion')">
+                        <i data-lucide="message-circle"></i> <span id="whatsapp-text">Falar com a Dra. Janaina no WhatsApp</span>
+                    </a>
+                    
+                    <button class="button button-secondary" onclick="showOptional()">
+                        <i data-lucide="edit-3"></i> Quer descrever melhor o que sente?
+                    </button>
+                </div>
+
+                <div id="result-tip" class="hidden" style="text-align: center; margin-top: 28px; font-size: 14px; font-style: italic; color: var(--text-gray); font-weight: 500; line-height: 1.6; padding: 0 12px;">
+                </div>
+            </div>
+        </div>
+
+        <div id="screen-optional" class="quiz-card hidden">
+            <h2 class="question-title">Quer me contar mais sobre o que você sente?</h2>
+            <div class="question-subtitle">(Opcional - mas me ajuda muito a já entender seu contexto)</div>
+            
+            <textarea
+                id="optional-text"
+                class="text-input"
+                placeholder="Ex: como começou a dor, em quais momentos piora, o que já tentou fazer para melhorar..."
+                rows="6"
+            ></textarea>
+            
+            <a id="whatsapp-link-final" href="#" class="whatsapp-button" style="margin-bottom: 20px;" target="_blank" rel="noopener noreferrer" onclick="trackQuizEvent('WhatsAppConversion')">
+                <i data-lucide="send"></i> Enviar e falar no WhatsApp
+            </a>
+            
+            <a id="skip-link" href="#" style="display: block; text-align: center; color: var(--text-gray); font-weight: 700; text-decoration: none; transition: all 0.3s ease;" target="_blank" rel="noopener noreferrer" onclick="trackQuizEvent('WhatsAppConversion')">
+                Pular esta etapa
+            </a>
+        </div>
+
+        <div class="footer">
+            <span class="footer-brand">Minha Fisio Online</span>
+            <span class="footer-tagline">O conforto de se mover bem, de onde você estiver</span>
+            <span class="footer-crefito">Dra. Janaina Martins • CREFITO: 3255337F</span>
+        </div>
+    </div>
+
+    <script>
+        // Inicializa os ícones Lucide
+        lucide.createIcons();
+
+        // CONFIGURAÇÃO
+        const WHATSAPP_NUMBER = "5511966519396";
+
+        // Estado do quiz
+        let currentQuestion = 0;
+        let answers = {};
+        let otherText = "";
+        let result = null;
+        let currentWhatsAppMsg = "";
+
+        function trackQuizEvent(eventName) {
+            if (typeof fbq !== 'undefined') fbq('track', eventName);
+        }
+
+        const questions = [
+            {
+                id: 1,
+                title: "O que você sente? (Marque tudo que se aplica a você)",
+                type: "multiple",
+                groups: [
+                    {
+                        title: "DOR EM:",
+                        options: [
+                            { value: "dor_coluna", label: "Coluna (lombar, cervical, torácica)", points: 2 },
+                            { value: "dor_mmss", label: "Ombro, braço, punho ou mão", points: 2 },
+                            { value: "dor_mmii", label: "Quadril, joelho, tornozelo ou pé", points: 2 }
+                        ]
+                    },
+                    {
+                        title: "SENSAÇÕES:",
+                        options: [
+                            { value: "formigamento", label: "Formigamento, dormência ou 'choque'", points: 2, flag: "formigamento" },
+                            { value: "rigidez", label: "Rigidez ou travamento (dificuldade de movimento)", points: 2 }
+                        ]
+                    },
+                    {
+                        title: "FUNCIONALIDADE:",
+                        options: [
+                            { value: "fraqueza", label: "Fraqueza ou cansaço muscular", points: 1 },
+                            { value: "equilibrio", label: "Desequilíbrio ou coordenação", points: 1 },
+                            { value: "postura", label: "Má postura (sinto que meu corpo está 'torto')", points: 2 }
+                        ]
+                    },
+                    {
+                        title: "SITUAÇÕES ESPECIAIS:",
+                        options: [
+                            { value: "sedentarismo", label: "Sedentarismo (quero voltar a me movimentar)", points: 2 },
+                            { value: "recuperacao", label: "Recuperação de lesão ou cirurgia", points: 1, flag: "recuperacao" },
+                            { value: "neuro", label: "Sequela neurológica (AVC, Parkinson, paralisia)", points: 1, flag: "neuro" },
+                            { value: "fibromialgia", label: "Dor no corpo todo (tipo fibromialgia)", points: 1 }
+                        ]
+                    }
+                ],
+                hasOther: true
+            },
+            {
+                id: 2,
+                title: "Há quanto tempo você convive com isso?",
+                type: "single",
+                options: [
+                    { value: "menos_1mes", label: "Menos de 1 mês (começou há pouco)", points: 1, flag: "agudo" },
+                    { value: "1a3meses", label: "1 a 3 meses", points: 2 },
+                    { value: "3a6meses", label: "3 a 6 meses", points: 3 },
+                    { value: "mais_6meses", label: "Mais de 6 meses (já virou rotina)", points: 3 },
+                    { value: "anos", label: "Anos (convivo com isso há muito tempo)", points: 3 }
+                ]
+            },
+            {
+                id: 3,
+                title: "O que isso mais atrapalha no seu dia? (Pode marcar mais de uma)",
+                type: "multiple",
+                options: [
+                    { value: "trabalho", label: "Trabalhar (sentar, digitar, reuniões)", points: 1 },
+                    { value: "sono", label: "Dormir (não consigo uma posição confortável)", points: 1 },
+                    { value: "exercicios", label: "Exercícios ou atividades que gosto", points: 1 },
+                    { value: "domesticas", label: "Tarefas domésticas (lavar, limpar, cozinhar)", points: 1 },
+                    { value: "filhos", label: "Cuidar dos filhos ou de alguém", points: 1 },
+                    { value: "escadas", label: "Subir/descer escadas", points: 1 },
+                    { value: "pe", label: "Ficar em pé por muito tempo", points: 1 },
+                    { value: "peso", label: "Carregar peso (compras, mochila)", points: 1 },
+                    { value: "consigo_levar", label: "Por enquanto consigo levar, mas incomoda", points: 0, flag: "baixa_motivacao" }
+                ]
+            },
+            {
+                id: 4,
+                title: "Você já tentou tratar isso antes?",
+                type: "single",
+                options: [
+                    { value: "nunca", label: "Nunca tratei (é a primeira vez que busco ajuda)", points: 2, flag: "primeira_vez" },
+                    { value: "fisio_bom", label: "Já fiz fisioterapia e tive bons resultados", points: 2 },
+                    { value: "fisio_sem_resultado", label: "Já fiz fisioterapia mas ainda sinto desconforto", points: 3 },
+                    { value: "outros", label: "Tentei outros profissionais ou tratamentos", points: 2 },
+                    { value: "sem_evolucao", label: "Estou em tratamento agora, mas sem evolução", points: 3 },
+                    { value: "sozinho", label: "Me viro sozinho (exercícios, alongamentos, apps)", points: 2 }
+                ]
+            },
+            {
+                id: 5,
+                title: "Como é sua rotina no dia a dia?",
+                type: "single",
+                options: [
+                    { value: "home_office", label: "Trabalho de casa (home office ou híbrido)", points: 3 },
+                    { value: "presencial", label: "Trabalho presencial com deslocamento longo", points: 2 },
+                    { value: "corrida", label: "Rotina muito corrida, sem tempo para compromissos extras", points: 2 },
+                    { value: "longe", label: "Moro longe de bons profissionais de saúde", points: 2 },
+                    { value: "imprevisivel", label: "Agenda imprevisível (viagens, plantões, horários variados)", points: 2 },
+                    { value: "praticidade", label: "Tenho flexibilidade, mas valorizo praticidade", points: 2 }
+                ]
+            },
+            {
+                id: 6,
+                title: "O quanto você está comprometido com seu tratamento?",
+                type: "single",
+                options: [
+                    { value: "resolver_rapido", label: "Quero resolver isso o quanto antes!", points: 5 },
+                    { value: "pesquisando", label: "Estou pesquisando minhas opções", points: 2 },
+                    { value: "duvida", label: "Só quero tirar uma dúvida", points: 1 }
+                ]
+            }
+        ];
+
+        function startQuiz() {
+            trackQuizEvent('QuizStarted');
+            document.getElementById('screen-intro').classList.add('hidden');
+            document.getElementById('screen-questions').classList.remove('hidden');
+            showQuestion(0);
+        }
+
+        function showQuestion(index) {
+            currentQuestion = index;
+            const question = questions[index];
+            
+            const progress = ((index + 1) / 6) * 100;
+            document.getElementById('progress-fill').style.width = progress + '%';
+            document.getElementById('question-number').textContent = `${index + 1} / 6`;
+            document.getElementById('question-title').textContent = question.title;
+            
+            const subtitleEl = document.getElementById('question-subtitle');
+            if (question.subtitle) {
+                subtitleEl.textContent = question.subtitle;
+                subtitleEl.style.display = 'block';
+            } else {
+                subtitleEl.style.display = 'none';
+            }
+            
+            const content = document.getElementById('question-content');
+            content.innerHTML = '';
+            
+            if (question.groups) {
+                question.groups.forEach(group => {
+                    const groupDiv = document.createElement('div');
+                    groupDiv.className = 'options-group';
+                    groupDiv.innerHTML = `<div class="options-group-title">${group.title}</div>`;
+                    
+                    group.options.forEach(option => {
+                        groupDiv.appendChild(createOption(option, question.id, question.type));
+                    });
+                    
+                    content.appendChild(groupDiv);
+                });
+                
+                if (question.hasOther) {
+                    const otherDiv = createOption({ value: 'outro', label: 'Outro' }, question.id, question.type);
+                    content.appendChild(otherDiv);
+                    
+                    const textDiv = document.createElement('div');
+                    textDiv.id = 'other-text-container';
+                    textDiv.className = 'hidden';
+                    textDiv.style.marginTop = '16px';
+                    textDiv.innerHTML = '<textarea id="other-text-input" class="text-input" placeholder="Me conta resumidamente o que você sente:"></textarea>';
+                    content.appendChild(textDiv);
+                }
+            } else {
+                const groupDiv = document.createElement('div');
+                groupDiv.className = 'options-group';
+                
+                question.options.forEach(option => {
+                    groupDiv.appendChild(createOption(option, question.id, question.type));
+                });
+                
+                content.appendChild(groupDiv);
+            }
+            
+            updateNextButton();
+        }
+
+        function createOption(option, questionId, type) {
+            const div = document.createElement('div');
+            div.className = 'option';
+            div.setAttribute('data-value', option.value);
+            div.setAttribute('data-question', questionId);
+            div.innerHTML = `
+                <div class="option-checkbox"></div>
+                <div class="option-text">${option.label}</div>
+            `;
+            
+            div.onclick = function() { selectOption(questionId, option.value, type, div); };
+            
+            if (type === 'multiple') {
+                if (answers[questionId] && answers[questionId].includes(option.value)) {
+                    div.classList.add('selected');
+                }
+            } else {
+                if (answers[questionId] === option.value) {
+                    div.classList.add('selected');
+                }
+            }
+            
+            return div;
+        }
+
+        function selectOption(questionId, value, type, element) {
+            if (type === 'multiple') {
+                if (!answers[questionId]) answers[questionId] = [];
+                
+                if (answers[questionId].includes(value)) {
+                    answers[questionId] = answers[questionId].filter(v => v !== value);
+                    element.classList.remove('selected');
+                } else {
+                    answers[questionId].push(value);
+                    element.classList.add('selected');
+                }
+                
+                if (value === 'outro' && questionId === 1) {
+                    const tc = document.getElementById('other-text-container');
+                    answers[questionId].includes('outro') ? tc.classList.remove('hidden') : tc.classList.add('hidden');
+                }
+            } else {
+                document.querySelectorAll(`[data-question="${questionId}"]`).forEach(opt => opt.classList.remove('selected'));
+                element.classList.add('selected');
+                answers[questionId] = value;
+            }
+            updateNextButton();
+        }
+
+        function updateNextButton() {
+            const question = questions[currentQuestion];
+            const answer = answers[question.id];
+            const btn = document.getElementById('next-btn');
+            
+            btn.disabled = question.type === 'multiple' ? (!answer || answer.length === 0) : !answer;
+            btn.innerHTML = currentQuestion === 5 ? 'Analisar resultados do meu caso <i data-lucide="check-circle"></i>' : 'Próxima <i data-lucide="chevron-right"></i>';
+            lucide.createIcons();
+        }
+
+        function nextQuestion() {
+            const otherInput = document.getElementById('other-text-input');
+            if (otherInput && otherInput.value) otherText = otherInput.value;
+            
+            if (currentQuestion < 5) {
+                showQuestion(currentQuestion + 1);
+            } else {
+                trackQuizEvent('QuizCompleted');
+                
+                document.getElementById('screen-questions').classList.add('hidden');
+                document.getElementById('screen-loading').classList.remove('hidden');
+                
+                result = calculateResult();
+                
+                setTimeout(() => {
+                    showResult();
+                }, 7000);
+            }
+        }
+
+        function calculateResult() {
+            let totalPoints = 0;
+            let flags = [];
+
+            questions.forEach(q => {
+                const answer = answers[q.id];
+                if (!answer) return;
+
+                if (q.groups) {
+                    if (Array.isArray(answer)) {
+                        answer.forEach(val => {
+                            q.groups.forEach(group => {
+                                const opt = group.options.find(o => o.value === val);
+                                if (opt) { totalPoints += opt.points; if (opt.flag) flags.push(opt.flag); }
+                            });
+                        });
+                    }
+                } else if (q.type === 'multiple') {
+                    if (Array.isArray(answer)) {
+                        totalPoints += answer.length >= 2 ? 3 : 2;
+                        answer.forEach(val => {
+                            const opt = q.options.find(o => o.value === val);
+                            if (opt && opt.flag) flags.push(opt.flag);
+                        });
+                    }
+                } else {
+                    const selectedOption = q.options.find(opt => opt.value === answer);
+                    if (selectedOption) {
+                        totalPoints += selectedOption.points;
+                        if (selectedOption.flag) flags.push(selectedOption.flag);
+                    }
+                }
+            });
+
+            const redFlagKeywords = ['peito', 'respirar', 'caí hoje', 'caí agora', 'sangue', 'ferida', 'criança', 'menor', 'tontura', 'desmaio'];
+            if (redFlagKeywords.some(keyword => otherText.toLowerCase().includes(keyword))) return 'red';
+
+            const altoComprometimento = answers[6] === 'resolver_rapido';
+            const hasFormigamentoAgudo = flags.includes('formigamento') && flags.includes('agudo');
+            const hasNeuroNuncaTratou = flags.includes('neuro') && flags.includes('primeira_vez');
+            const hasRecuperacaoRecente = flags.includes('recuperacao') && flags.includes('agudo');
+
+            if (altoComprometimento && !hasFormigamentoAgudo && !hasNeuroNuncaTratou && !hasRecuperacaoRecente) return 'green';
+            if (hasFormigamentoAgudo || hasNeuroNuncaTratou || hasRecuperacaoRecente || otherText.length > 0) return 'yellow';
+            if (totalPoints < 8 || flags.includes('baixa_motivacao')) return 'yellow';
+
+            return 'green';
+        }
+
+        function getAnswersSummary() {
+            let sintomas = [], impactos = [], comprometimento = "", rotina = "";
+            
+            if (Array.isArray(answers[1])) {
+                questions[0].groups.forEach(group => {
+                    answers[1].forEach(val => {
+                        const opt = group.options.find(o => o.value === val);
+                        if (opt) sintomas.push(opt.label.toLowerCase());
+                    });
+                });
+                if (answers[1].includes('outro')) {
+                    sintomas.push(otherText ? `Outro (${otherText})` : 'outro sintoma relatado');
+                }
+            }
+
+            if (Array.isArray(answers[3])) {
+                answers[3].forEach(val => {
+                    const opt = questions[2].options.find(o => o.value === val);
+                    if (opt) impactos.push(opt.label.toLowerCase());
+                });
+            }
+
+            const q5Opt = questions[4].options.find(opt => opt.value === answers[5]);
+            if (q5Opt) rotina = q5Opt.label.toLowerCase();
+
+            const q6Opt = questions[5].options.find(opt => opt.value === answers[6]);
+            if (q6Opt) comprometimento = q6Opt.label;
+
+            return { sintomas, impactos, rotina, comprometimento };
+        }
+
+        function createConfetti() {
+            const container = document.getElementById('confetti-container');
+            const colors = ['#2d2623', '#10b981', '#eab308', '#a85939'];
+            
+            for (let i = 0; i < 50; i++) {
+                const conf = document.createElement('div');
+                conf.style.position = 'absolute';
+                conf.style.width = Math.random() * 8 + 6 + 'px';
+                conf.style.height = Math.random() * 8 + 6 + 'px';
+                conf.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                conf.style.left = Math.random() * 100 + '%';
+                conf.style.top = '-20px';
+                conf.style.opacity = Math.random() + 0.5;
+                conf.style.transform = `rotate(${Math.random() * 360}deg)`;
+                conf.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+                
+                const animDuration = Math.random() * 3 + 2;
+                conf.animate([
+                    { transform: `translate3d(0,0,0) rotate(0deg)`, opacity: 1 },
+                    { transform: `translate3d(${Math.random()*100 - 50}px, 100vh, 0) rotate(${Math.random()*720}deg)`, opacity: 0 }
+                ], { duration: animDuration * 1000, easing: 'cubic-bezier(.37,0,.63,1)' });
+                
+                container.appendChild(conf);
+            }
+        }
+
+        function showResult() {
+            document.getElementById('screen-loading').classList.add('hidden');
+            document.getElementById('screen-result').classList.remove('hidden');
+
+            const summary = getAnswersSummary();
+            const s = summary.sintomas.length ? summary.sintomas.join(', ') : 'sintomas';
+            const i = summary.impactos.length ? summary.impactos.join(', ') : 'dia a dia';
+            
+            const nivelComprometimento = answers[6] || 'resolver_rapido'; 
+
+            let greenConfig = {};
+            
+            if (nivelComprometimento === 'resolver_rapido') {
+                greenConfig = {
+                    icon: 'target',
+                    title: 'Perfeito! Você pode fazer fisioterapia online 🎉',
+                    theme: 'theme-green',
+                    body: '<p>Analisei suas respostas e está tudo certo para começarmos o tratamento à distância.</p><p>E pelo seu nível de comprometimento, você tem exatamente o perfil de quem consegue resultados rápidos, porque vai seguir o plano direitinho.</p><p>Considerando sua rotina (<strong>'+summary.rotina+'</strong>), o formato online vai te economizar tempo e você já começa a sentir diferença nas primeiras semanas.</p><p>Vamos agendar sua avaliação?</p>',
+                    msg: `Oi Jana! Fiz a triagem e deu VERDE (Match!) 🎯\n\nSinto: ${s}\nIsso atrapalha: ${i}\nMinha rotina: ${summary.rotina}\n\nGostaria de agendar minha avaliação!`,
+                    btnText: 'Agendar agora pelo WhatsApp',
+                    tip: ''
+                };
+            } else if (nivelComprometimento === 'pesquisando') {
+                greenConfig = {
+                    icon: 'search',
+                    title: 'Entendi! Você está na fase de pesquisa (e isso é inteligente)',
+                    theme: 'theme-green',
+                    body: '<p>Então deixa eu te dar mais clareza sobre como funciona:</p><p>→ <strong>Não é vídeo gravado:</strong> É consulta ao vivo, avaliação completa com uma fisioterapeuta especializada<br>→ <strong>Não é genérico:</strong> Plano montado especificamente para o SEU corpo<br>→ <strong>Não é "se vira":</strong> Acompanhamento semanal comigo</p><p>Com a sua rotina (<strong>'+summary.rotina+'</strong>), você pode fazer o tratamento sem se deslocar, no seu horário, e com a mesma qualidade de um atendimento presencial.</p><p>Se quiser tirar dúvidas específicas antes de decidir, me chama no WhatsApp. Sem compromisso, ok?</p>',
+                    msg: `Oi Jana! Fiz a triagem e deu VERDE, mas estou pesquisando 🔎\n\nSinto: ${s}\nIsso atrapalha: ${i}\nMinha rotina: ${summary.rotina}\n\nQueria entender melhor como funciona!`,
+                    btnText: 'Quero entender melhor',
+                    tip: 'A maioria dos meus pacientes também estava "só pesquisando" quando me encontrou. Depois descobriram que já tinham perdido meses sofrendo à toa.'
+                };
+            } else {
+                greenConfig = {
+                    icon: 'help-circle',
+                    title: 'Tranquilo! Tira sua dúvida comigo',
+                    theme: 'theme-green',
+                    body: '<p>Pelo que você respondeu, a fisioterapia online PODE funcionar para você — mas como você ainda está conhecendo o formato, vou te explicar melhor:</p><p><strong>Como funciona na prática:</strong><br>→ Consulta ao vivo por videochamada (não é vídeo pronto)<br>→ Eu avalio seus movimentos, sua postura, sua rotina<br>→ Monto um plano personalizado só para você<br>→ Acompanho sua evolução em cada consulta</p><p><strong>Para quem serve:</strong><br>Pessoas com a seguinte rotina: <strong>'+summary.rotina+'</strong>, e que querem resolver o problema sem perder tempo com trânsito/sala de espera.</p><p><strong>Para quem NÃO serve:</strong><br>Quem prefere só "pegar uma lista de exercícios" sem acompanhamento. Quem prefere conviver com a dor e investir dinheiro em algo que não funciona.</p><p>Me chama no WhatsApp se quiser conversar mais sobre o seu caso específico. Sem pressão, ok?</p>',
+                    msg: `Oi Jana! Fiz a triagem (VERDE), mas só queria tirar uma dúvida 💬\n\nSinto: ${s}\nMinha rotina: ${summary.rotina}\n\nPode me ajudar com uma dúvida rápida?`,
+                    btnText: 'Tirar dúvida pelo WhatsApp',
+                    tip: 'Dica: Salva meu contato. Quando você estiver pronto para resolver de verdade, é só chamar.'
+                };
+            }
+
+            const config = {
+                green: greenConfig,
+                yellow: {
+                    icon: 'alert-circle',
+                    title: 'Quase lá! Preciso entender melhor o seu caso',
+                    theme: 'theme-yellow',
+                    body: '<p>Suas respostas mostram que você PODE fazer fisioterapia online, mas alguns detalhes precisam de uma conversa mais aprofundada antes de agendarmos a consulta.</p><p>Não é nada grave — é só para eu ter certeza de montar o melhor plano possível para você desde o início.</p><p>Vamos trocar uma ideia rápida pelo WhatsApp? Leva uns 5 minutos e aí eu consigo te passar um direcionamento mais preciso.</p>',
+                    msg: `Oi Jana! Fiz a triagem e deu AMARELO 💬\n\nSinto: ${s}\nIsso atrapalha: ${i}\nMinha rotina: ${summary.rotina}\n\nPodemos conversar rapidinho sobre meu caso?`,
+                    btnText: 'Conversar com a Dra. Janaína',
+                    tip: 'Essa etapa extra é justamente o que garante que você não vai perder tempo nem dinheiro com algo que não se encaixa no seu caso.'
+                },
+                red: {
+                    icon: 'alert-triangle',
+                    title: 'Por segurança, recomendo o atendimento presencial.',
+                    theme: 'theme-red',
+                    body: '<p>Avaliando os sinais que você relatou, a fisioterapia presencial é a conduta clínica mais responsável para você neste momento.</p><p>Mas eu não vou te deixar na mão! Se quiser me chamar no WhatsApp, eu te oriento sobre o que fazer agora ou tento indicar um colega de confiança na sua região.</p>',
+                    msg: `Oi Jana. Fiz a triagem e deu VERMELHO 🏥\n\nSinto: ${s}\n\nGostaria de uma orientação ou indicação do que fazer.`,
+                    btnText: 'Pedir orientação no WhatsApp',
+                    tip: 'A sua saúde e segurança estarão sempre em primeiro lugar.'
+                }
+            }[result];
+
+            document.getElementById('screen-result').className = `quiz-card ${config.theme}`;
+            document.getElementById('result-icon').setAttribute('data-lucide', config.icon);
+            document.getElementById('result-title').textContent = config.title;
+            document.getElementById('result-body').innerHTML = config.body;
+            
+            document.getElementById('whatsapp-text').textContent = config.btnText;
+            
+            const tipEl = document.getElementById('result-tip');
+            if(config.tip) {
+                tipEl.innerHTML = `* ${config.tip} *`;
+                tipEl.classList.remove('hidden');
+            } else {
+                tipEl.classList.add('hidden');
+            }
+            
+            currentWhatsAppMsg = config.msg;
+
+            const wUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(currentWhatsAppMsg)}`;
+            document.getElementById('whatsapp-link').href = wUrl;
+            document.getElementById('whatsapp-link-final').href = wUrl;
+            document.getElementById('skip-link').href = wUrl;
+            
+            lucide.createIcons();
+            if(result === 'green' && nivelComprometimento === 'resolver_rapido') createConfetti();
+        }
+
+        document.getElementById('optional-text').addEventListener('input', function(e) {
+            const extra = e.target.value.trim();
+            let finalMsg = currentWhatsAppMsg;
+            if (extra) {
+                finalMsg += `\n\nMais detalhes do meu caso: ${extra}`;
+            }
+            document.getElementById('whatsapp-link-final').href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(finalMsg)}`;
+        });
+
+        function showOptional() {
+            document.getElementById('screen-result').classList.add('hidden');
+            document.getElementById('screen-optional').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
