@@ -58,7 +58,7 @@
             --white: #ffffff;
             
             --green: #10b981;
-            --yellow: #eab308;
+            --yellow-muted: #d97706;
             --red: #ef4444;
             --blue-globe: #3b82f6;
             
@@ -120,6 +120,15 @@
         @keyframes slideDown {
             from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15), inset 0 0 0 1px rgba(255,255,255,0.5), 0 0 0 0 rgba(168, 89, 57, 0.7); }
+            50% { box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15), inset 0 0 0 1px rgba(255,255,255,0.5), 0 0 0 8px rgba(168, 89, 57, 0); }
+        }
+
+        .pulse-result {
+            animation: pulse-glow 2s infinite;
         }
         
         .header { text-align: center; margin-bottom: 32px; }
@@ -194,6 +203,32 @@
             margin-bottom: 12px;
             line-height: 1.15;
             letter-spacing: -0.5px;
+        }
+
+        .social-proof {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 32px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 12px;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .social-proof-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .social-proof-number {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--terracotta);
         }
         
         .storytelling {
@@ -320,6 +355,13 @@
         .option.selected .option-checkbox {
             background: var(--terracotta);
             border-color: var(--terracotta);
+            animation: checkbox-pop 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        @keyframes checkbox-pop {
+            0% { transform: scale(0.8); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
         
         .option.selected .option-checkbox::after {
@@ -444,7 +486,7 @@
             padding: 24px;
             border-radius: 16px;
             border: 1px solid var(--paper-border);
-            border-left: 4px solid var(--yellow); 
+            border-left: 4px solid var(--yellow-muted); 
             text-align: left;
             max-width: 90%;
             box-shadow: 0 4px 12px rgba(0,0,0,0.03);
@@ -453,7 +495,7 @@
 
         .did-you-know span {
             font-weight: 800;
-            color: var(--yellow);
+            color: var(--yellow-muted);
             display: block;
             margin-bottom: 8px;
             font-size: 14px;
@@ -502,8 +544,8 @@
         .theme-green .result-icon-box { background: var(--green); }
         .theme-green .result-title { color: var(--green); }
         
-        .theme-yellow .result-icon-box { background: var(--yellow); }
-        .theme-yellow .result-title { color: var(--yellow); }
+        .theme-yellow .result-icon-box { background: var(--yellow-muted); }
+        .theme-yellow .result-title { color: var(--yellow-muted); }
         
         .theme-red .result-icon-box { background: var(--red); }
         .theme-red .result-title { color: var(--red); }
@@ -521,6 +563,15 @@
         
         .result-body p { margin-bottom: 16px; }
         .result-body p:last-child { margin-bottom: 0; }
+
+        .result-body ul {
+            margin: 16px 0;
+            padding-left: 20px;
+        }
+
+        .result-body ul li {
+            margin-bottom: 12px;
+        }
         
         .whatsapp-button {
             background: #25D366;
@@ -607,6 +658,7 @@
             .result-header { flex-direction: column; align-items: flex-start; gap: 16px; }
             .result-title { font-size: 28px; }
             .button, .whatsapp-button { padding: 20px 24px; font-size: 15px; }
+            .social-proof { flex-direction: column; gap: 16px; }
         }
     </style>
 </head>
@@ -621,9 +673,6 @@
             <div class="header">
                 
                 <div class="hero-collage">
-                    <i data-lucide="sparkles" class="sparkle-icon" style="top: 10px; left: 50px; width: 20px; height: 20px;"></i>
-                    <i data-lucide="sparkles" class="sparkle-icon" style="bottom: 20px; right: 60px; width: 28px; height: 28px;"></i>
-                    
                     <div class="sticker sticker-wifi">
                         <i data-lucide="wifi"></i> 
                     </div>
@@ -636,15 +685,30 @@
                 </div>
 
                 <h1>Fisioterapia online funciona para mim?</h1>
+
+                <div class="social-proof">
+                    <div class="social-proof-item">
+                        <span class="social-proof-number">200+</span>
+                        <span>Pacientes tratadas</span>
+                    </div>
+                    <div class="social-proof-item">
+                        <span class="social-proof-number">3 sem</span>
+                        <span>Redução média</span>
+                    </div>
+                    <div class="social-proof-item">
+                        <span class="social-proof-number">98%</span>
+                        <span>Satisfação</span>
+                    </div>
+                </div>
             </div>
             
             <div class="storytelling">
                 <p>Essa é a pergunta que quase todo mundo faz. E a resposta é: <strong>depende.</strong></p>
                 <p>A maioria das pessoas não sabe, mas a fisioterapia online funciona para MUITO mais situações do que parece. E você não precisa ficar na dúvida.</p>
-                <p>Criei esta <strong>triagem rápida de 2 minutos</strong> para analisar o SEU caso específico e descobrir se o que você sente pode ser tratado à distância de forma segura e eficaz.</p>
+                <p>Criei este <strong>teste rápido de 2 minutos</strong> para analisar o SEU caso específico e descobrir se o que você sente pode ser tratado à distância de forma segura e eficaz.</p>
                 
                 <div class="highlight-box">
-                    <p><strong>Atenção:</strong> tratamento online não é "vídeo de exercício". É consulta ao vivo, investigação clínica profunda e acompanhamento individualizado para seus objetivos.</p>
+                    <p><strong>Importante:</strong> É consulta ao vivo com avaliação profunda, não lista de exercícios genéricos. Você tem acesso direto a mim e um plano personalizado.</p>
                 </div>
             </div>
             
@@ -657,13 +721,13 @@
             </div>
             
             <div style="text-align: center; margin-top: 12px; font-size: 13px; color: var(--terracotta); display: flex; align-items: center; justify-content: center; gap: 6px; font-weight: 600;">
-                <i data-lucide="lock" style="width: 14px; height: 14px;"></i> Esta triagem é 100% gratuita e confidencial
+                <i data-lucide="lock" style="width: 14px; height: 14px;"></i> Este teste online é 100% gratuito e confidencial
             </div>
         </div>
 
         <div id="screen-questions" class="quiz-card hidden">
             <div class="progress-container">
-                <div id="question-number" class="question-number">1 / 6</div>
+                <div id="question-number" class="question-number">1 de 6</div>
                 <div class="progress-bar">
                     <div id="progress-fill" class="progress-fill" style="width: 16.6%"></div>
                 </div>
@@ -687,7 +751,7 @@
                 
                 <div class="did-you-know" style="margin-top: 24px;">
                     <span>💡 Você sabia?</span>
-                    <p>Estudos comprovam que a Fisioterapia Online reduz dores de forma tão eficaz quanto o tratamento presencial, ajudando você a ganhar tempo e qualidade de vida.</p>
+                    <p>Estudos comprovam que a Fisioterapia Online reduz dores de forma tão eficaz quanto o tratamento presencial, ajudando você a recuperar sua rotina sem perder tempo com deslocamentos.</p>
                 </div>
             </div>
         </div>
@@ -711,7 +775,7 @@
                     </a>
                     
                     <button class="button button-secondary" onclick="showOptional()">
-                        <i data-lucide="edit-3"></i> Quer descrever melhor o que sente?
+                        <i data-lucide="edit-3"></i> Conte-me detalhes da sua situação
                     </button>
                 </div>
 
@@ -721,8 +785,8 @@
         </div>
 
         <div id="screen-optional" class="quiz-card hidden">
-            <h2 class="question-title">Quer me contar mais sobre o que você sente?</h2>
-            <div class="question-subtitle">(Opcional - mas me ajuda muito a já entender seu contexto)</div>
+            <h2 class="question-title">Conte-me mais sobre o que você sente</h2>
+            <div class="question-subtitle">(Isso me ajuda a montar um plano totalmente personalizado para você)</div>
             
             <textarea
                 id="optional-text"
@@ -735,8 +799,8 @@
                 <i data-lucide="send"></i> Enviar e falar no WhatsApp
             </a>
             
-            <a id="skip-link" href="#" style="display: block; text-align: center; color: var(--text-gray); font-weight: 600; text-decoration: none;" target="_blank" rel="noopener noreferrer" onclick="trackQuizEvent('WhatsAppConversion')">
-                Pular esta etapa
+            <a id="skip-link" href="#" style="display: block; text-align: center; color: var(--text-gray); font-weight: 600; text-decoration: none; padding: 12px;" target="_blank" rel="noopener noreferrer" onclick="trackQuizEvent('WhatsAppConversion')">
+                Ir direto para o WhatsApp
             </a>
         </div>
 
@@ -760,6 +824,7 @@
         let otherText = "";
         let result = null;
         let currentWhatsAppMsg = "";
+        let userRotina = "";
 
         function trackQuizEvent(eventName) {
             if (typeof fbq !== 'undefined') fbq('track', eventName);
@@ -808,19 +873,19 @@
             },
             {
                 id: 2,
-                title: "Há quanto tempo você convive com isso?",
+                title: "Há quanto tempo você convive com essa dor ou incômodo?",
                 type: "single",
                 options: [
                     { value: "menos_1mes", label: "Menos de 1 mês (começou há pouco)", points: 1, flag: "agudo" },
                     { value: "1a3meses", label: "1 a 3 meses", points: 2 },
                     { value: "3a6meses", label: "3 a 6 meses", points: 3 },
                     { value: "mais_6meses", label: "Mais de 6 meses (já virou rotina)", points: 3 },
-                    { value: "anos", label: "Anos (convivo com isso há muito tempo)", points: 3 }
+                    { value: "anos", label: "Anos (convivo com essa dor ou limitação há muito tempo)", points: 3 }
                 ]
             },
             {
                 id: 3,
-                title: "O que isso mais atrapalha no seu dia? (Pode marcar mais de uma)",
+                title: "O que essa dor ou desconforto mais atrapalha no seu dia? (Pode marcar mais de uma)",
                 type: "multiple",
                 options: [
                     { value: "trabalho", label: "Trabalhar (sentar, digitar, reuniões)", points: 1 },
@@ -836,7 +901,7 @@
             },
             {
                 id: 4,
-                title: "Você já tentou tratar isso antes?",
+                title: "Você já tentou tratar esse problema antes?",
                 type: "single",
                 options: [
                     { value: "nunca", label: "Nunca tratei (é a primeira vez que busco ajuda)", points: 2, flag: "primeira_vez" },
@@ -865,7 +930,7 @@
                 title: "O quanto você está comprometido com seu tratamento?",
                 type: "single",
                 options: [
-                    { value: "resolver_rapido", label: "Quero resolver isso o quanto antes!", points: 5 },
+                    { value: "resolver_rapido", label: "Quero voltar a me sentir bem o quanto antes!", points: 5 },
                     { value: "pesquisando", label: "Estou pesquisando minhas opções", points: 2 },
                     { value: "duvida", label: "Só quero tirar uma dúvida", points: 1 }
                 ]
@@ -885,7 +950,7 @@
             
             const progress = ((index + 1) / 6) * 100;
             document.getElementById('progress-fill').style.width = progress + '%';
-            document.getElementById('question-number').textContent = `${index + 1} / 6`;
+            document.getElementById('question-number').textContent = `${index + 1} de 6`;
             document.getElementById('question-title').textContent = question.title;
             
             const subtitleEl = document.getElementById('question-subtitle');
@@ -920,7 +985,7 @@
                     textDiv.id = 'other-text-container';
                     textDiv.className = 'hidden';
                     textDiv.style.marginTop = '16px';
-                    textDiv.innerHTML = '<textarea id="other-text-input" class="text-input" placeholder="Me conta resumidamente o que você sente:"></textarea>';
+                    textDiv.innerHTML = '<textarea id="other-text-input" class="text-input" placeholder="Qual outro sintoma você sente?"></textarea>';
                     content.appendChild(textDiv);
                 }
             } else {
@@ -992,7 +1057,7 @@
             const btn = document.getElementById('next-btn');
             
             btn.disabled = question.type === 'multiple' ? (!answer || answer.length === 0) : !answer;
-            btn.innerHTML = currentQuestion === 5 ? 'Analisar resultados do meu caso <i data-lucide="check-circle"></i>' : 'Próxima <i data-lucide="chevron-right"></i>';
+            btn.innerHTML = currentQuestion === 5 ? 'Analisar meu resultado <i data-lucide="check-circle"></i>' : 'Próxima <i data-lucide="chevron-right"></i>';
             lucide.createIcons();
         }
 
@@ -1031,6 +1096,10 @@
                     }
                 }
             }
+
+            // Capturar rotina para usar na mensagem
+            const rotinaOption = findOption(questions[4], answers[5]);
+            userRotina = rotinaOption ? rotinaOption.label : "sua rotina";
             
             // Mostrar loading
             document.getElementById('screen-questions').classList.add('hidden');
@@ -1039,7 +1108,7 @@
             // Simular processamento
             setTimeout(() => {
                 showResults(totalPoints, flags);
-            }, 2000);
+            }, 1500);
         }
 
         function findOption(question, value) {
@@ -1056,59 +1125,104 @@
         }
 
         function showResults(points, flags) {
-            let resultType = 'green'; // default
+            let resultType = 'green';
             let title = '';
             let body = '';
             let icon = 'check-circle';
             let whatsappText = '';
+            let messageType = '';
 
-            if (points < 10) {
-                resultType = 'yellow';
-                title = 'Pode funcionar para você!';
-                body = `<p>Seus sintomas <strong>podem ser tratados online</strong>, mas é importante uma avaliação mais detalhada para garantir segurança.</p>
-                       <p>Agende uma consulta comigo para entendermos melhor seu caso e planejamos o tratamento ideal.</p>`;
+            if (points < 8) {
+                resultType = 'red';
+                title = 'Precisamos conversar antes';
+                body = `<p>Analisando suas respostas, notei que o seu caso possui alguns detalhes clínicos que exigem uma conversa mais aprofundada antes de agendar uma primeira sessão.</p>
+                       <p><strong>Não precisa se preocupar</strong> — este é apenas o meu cuidado profissional para ter certeza absoluta de que o formato online é o ambiente mais seguro e eficaz para tratar o seu problema agora.</p>
+                       <p>Vamos trocar uma ideia rápida pelo WhatsApp? Leva uns 5 minutinhos. Eu te faço algumas perguntas extras e te dou um direcionamento clínico preciso.</p>`;
                 icon = 'help-circle';
-                whatsappText = 'Entender melhor meu caso';
+                whatsappText = 'Conversar sobre meu caso';
+                messageType = 'red';
+            } else if (points < 14) {
+                resultType = 'yellow';
+                title = 'Entendi! Você está na fase de pesquisa';
+                body = `<p>Como profissional, prefiro pacientes assim: que buscam entender o que vão contratar antes de tomar uma decisão clínica.</p>
+                       <p>Muitas pessoas perdem tempo e dinheiro tentando resolver dores sozinhas com dicas genéricas da internet. O que eu faço aqui é completamente diferente:</p>
+                       <ul>
+                           <li><strong>Não é genérico:</strong> Fazemos uma avaliação completa e ao vivo para descobrir a raiz do seu desconforto.</li>
+                           <li><strong>Sessões focadas em resultado:</strong> Nada de exercícios aleatórios. Cada sessão tem um objetivo claro e acompanhamento direto comigo.</li>
+                           <li><strong>Encaixe perfeito:</strong> Como sua rotina é de ${userRotina}, o online corta o trânsito e a sala de espera, entregando a qualidade do presencial de onde você estiver.</li>
+                       </ul>
+                       <p>Você não precisa agendar uma sessão hoje se não quiser. Mas me chame no WhatsApp para batermos um papo rápido sobre seu caso. Assim, você continua sua pesquisa com o direcionamento de uma especialista.</p>
+                       <p style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #ebdcd0; font-size: 14px; font-style: italic;"><strong>Dica:</strong> Pesquisar é essencial, mas adiar o cuidado faz o corpo criar compensações. Tirar sua dúvida agora comigo pode te poupar semanas de desconforto.</p>`;
+                icon = 'info';
+                whatsappText = 'Bater um papo sobre meu caso';
+                messageType = 'yellow';
             } else if (points < 20) {
                 resultType = 'green';
                 title = 'Ótimo! Você é um ótimo candidato!';
                 body = `<p>Seus sintomas <strong>encaixam muito bem com tratamento online</strong>. Você terá os benefícios de:</p>
-                       <ul style="margin: 16px 0; padding-left: 20px;">
-                           <li>Consultas ao vivo com investigação clínica profunda</li>
+                       <ul>
+                           <li>Consultas ao vivo com avaliação profunda (não é vídeo de exercício)</li>
                            <li>Acompanhamento continuado e personalizado</li>
                            <li>Praticidade de fazer de casa (sem deslocamentos)</li>
                            <li>Resultados comprovados em sua situação</li>
                        </ul>
-                       <p>Vamos começar?</p>`;
+                       <p><strong>O primeiro passo é a nossa Avaliação Clínica Completa.</strong> É nossa primeira sessão ao vivo, onde vou mapear seus movimentos, entender melhor sua história e montar um plano clínico focado em você.</p>
+                       <p>Vamos agendar?</p>`;
                 icon = 'thumb-up';
-                whatsappText = 'Começar meu tratamento online';
+                whatsappText = 'Agendar minha avaliação';
+                messageType = 'green-medium';
             } else {
                 resultType = 'green';
                 title = 'Perfeito! Você é um candidato ideal!';
                 body = `<p><strong>Seu perfil é excelente para tratamento online!</strong> Você tem:</p>
-                       <ul style="margin: 16px 0; padding-left: 20px;">
+                       <ul>
                            <li>Situação clínica bem indicada para abordagem remota</li>
                            <li>Comprometimento com o tratamento</li>
-                           <li>Rotina que facilita acompanhamento online</li>
+                           <li>Rotina que facilita acompanhamento online (${userRotina})</li>
                            <li>Potencial muito alto de evolução</li>
                        </ul>
-                       <p>Estou pronta para ajudar você a se mover sem dor novamente!</p>`;
+                       <p>O que eu vou fazer com você:</p>
+                       <ul>
+                           <li><strong>Avaliação Clínica Completa:</strong> Entender a raiz do seu problema</li>
+                           <li><strong>Sessões semanais ao vivo:</strong> Direto ao ponto, sem enrolação</li>
+                           <li><strong>Acompanhamento personalizado:</strong> Ajustamos conforme sua evolução</li>
+                       </ul>
+                       <p>Estou pronta para ajudar você a se mover sem dor novamente! <strong>Vamos começar?</strong></p>`;
                 icon = 'zap';
-                whatsappText = 'Iniciar tratamento agora';
+                whatsappText = 'Começar meu tratamento';
+                messageType = 'green-high';
             }
 
             document.getElementById('screen-loading').classList.add('hidden');
-            document.getElementById('screen-result').classList.remove('hidden');
+            const resultCard = document.getElementById('screen-result');
+            resultCard.classList.remove('hidden');
             
-            const resultCard = document.getElementById('result-icon-box').parentElement.parentElement;
-            resultCard.className = 'result-card theme-' + resultType;
+            const resultCardElement = document.getElementById('result-icon-box').parentElement.parentElement;
+            resultCardElement.className = 'result-card theme-' + resultType;
+            
+            // Adicionar pulse animation se for verde
+            if (resultType === 'green') {
+                resultCard.classList.add('pulse-result');
+            }
             
             document.getElementById('result-icon').setAttribute('data-lucide', icon);
             document.getElementById('result-title').textContent = title;
             document.getElementById('result-body').innerHTML = body;
             document.getElementById('whatsapp-text').textContent = whatsappText;
             
-            currentWhatsAppMsg = `Olá! Fiz a triagem e o resultado foi: ${title}. Gostaria de conversar mais sobre minha situação.`;
+            // Montar mensagem WhatsApp
+            let baseMsg = '';
+            if (messageType === 'red') {
+                baseMsg = `Olá! Fiz a triagem no seu site e fui direcionada para conversar antes de agendar. Gostaria de falar mais sobre meu caso.`;
+            } else if (messageType === 'yellow') {
+                baseMsg = `Oi! Fiz a triagem e estou pesquisando sobre fisioterapia online. Gostaria de tirar algumas dúvidas com você sobre como é o acompanhamento.`;
+            } else if (messageType === 'green-medium') {
+                baseMsg = `Olá Dra. Janaína! Fiz a triagem e o resultado deu que sou um ótimo candidato para o tratamento online. Gostaria de agendar minha avaliação clínica.`;
+            } else {
+                baseMsg = `Oi Dra. Janaína! Fiz a triagem e fui classificada como candidata ideal! Quero começar meu tratamento. Qual é o próximo passo?`;
+            }
+
+            currentWhatsAppMsg = baseMsg;
             
             const whatsappLink = document.getElementById('whatsapp-link');
             const whatsappLinkFinal = document.getElementById('whatsapp-link-final');
@@ -1118,14 +1232,10 @@
             document.getElementById('skip-link').href = whatsappLink.href;
             
             lucide.createIcons();
-            
-            // Confete se resultado bom
-            if (resultType === 'green') {
-                createConfetti();
-            }
         }
 
         function showOptional() {
+            document.getElementById('screen-result').classList.remove('pulse-result');
             document.getElementById('screen-result').classList.add('hidden');
             document.getElementById('screen-optional').classList.remove('hidden');
             
@@ -1137,41 +1247,11 @@
                 const text = optionalText.value;
                 let msg = currentWhatsAppMsg;
                 if (text) {
-                    msg += `\n\nComplemento da minha situação:\n${text}`;
+                    msg += `\n\nDetalhes da minha situação:\n${text}`;
                 }
                 window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
                 trackQuizEvent('WhatsAppConversion');
             };
-        }
-
-        function createConfetti() {
-            const container = document.getElementById('confetti-container');
-            const colors = ['#10b981', '#eab308', '#3b82f6', '#a85939'];
-            
-            for (let i = 0; i < 50; i++) {
-                const confetti = document.createElement('div');
-                confetti.style.position = 'absolute';
-                confetti.style.width = '10px';
-                confetti.style.height = '10px';
-                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.left = Math.random() * 100 + '%';
-                confetti.style.top = '-10px';
-                confetti.style.borderRadius = '50%';
-                confetti.style.animation = `fall ${2 + Math.random() * 1}s linear forwards`;
-                confetti.style.opacity = Math.random();
-                container.appendChild(confetti);
-            }
-            
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes fall {
-                    to {
-                        transform: translateY(400px) rotate(360deg);
-                        opacity: 0;
-                    }
-                }
-            `;
-            document.head.appendChild(style);
         }
     </script>
 </body>
